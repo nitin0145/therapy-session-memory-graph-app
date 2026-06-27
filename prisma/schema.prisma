@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Patient {
+  id        String   @id @default(uuid())
+  fullName  String
+  age       Int
+  gender    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions  TherapySession[]
+}
+
+model TherapySession {
+  id          String   @id @default(uuid())
+  patientId   String
+  title       String
+  transcript  String
+  summary     String?
+  sessionDate DateTime
+  createdAt   DateTime @default(now())
+
+  patient     Patient        @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  memories    MemoryEntity[]
+}
+
+model MemoryEntity {
+  id        String   @id @default(uuid())
+  sessionId String
+  type      String
+  value     String
+
+  session   TherapySession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
