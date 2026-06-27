@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect } from "react";
+import { useEffect } from "react";
 import { ReactFlow, Background, Controls, Edge, Node, Handle, Position, MarkerType, useNodesState, useEdgesState } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { Brain, Calendar, Activity, Pill, User, AlertTriangle, ShieldCheck } from "lucide-react";
@@ -11,7 +11,7 @@ interface GraphData {
 }
 
 // Premium Custom Node
-const CustomNode = ({ data }: any) => {
+const CustomNode = ({ data }: { data: { isPatient?: boolean; isSession?: boolean; type?: string; label?: string } }) => {
   const isPatient = data.isPatient;
   const isSession = data.isSession;
 

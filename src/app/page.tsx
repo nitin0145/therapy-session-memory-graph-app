@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { CreatePatientDialog } from "@/components/patients/create-patient-dialog";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { formatDistanceToNow } from "date-fns";
-import { FolderHeart, Users, ArrowRight, UserPlus } from "lucide-react";
+import { FolderHeart, Users } from "lucide-react";
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +34,7 @@ export default async function DashboardPage() {
           </div>
           <h3 className="text-xl font-semibold mb-2">No patients yet</h3>
           <p className="text-slate-500 mb-8 max-w-sm">
-            You don't have any patients in your database. Add your first patient to start analyzing their sessions and generating memory graphs.
+            You don&apos;t have any patients in your database. Add your first patient to start analyzing their sessions and generating memory graphs.
           </p>
           <CreatePatientDialog />
         </div>
