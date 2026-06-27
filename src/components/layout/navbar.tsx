@@ -12,7 +12,7 @@ export function Navbar() {
       
       <div className="flex items-center gap-4">
         <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-sm font-medium text-slate-600 dark:text-slate-300">
-          DR
+          NR
         </div>
       </div>
     </header>
